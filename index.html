@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Weather Analytical Dashboard</title>
+  <link rel="stylesheet" href="weather.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Weather Analytical Dashboard</h1>
+
+  <div class="search-box">
+    <input type="text" id="cityInput" placeholder="Enter city name" />
+    <button onclick="getWeather()">Search</button>
+    <button class="location-btn" onclick="getLocationWeather()">📍 Use My Location</button>
+  </div>
+
+  <!-- Loader -->
+  <div id="loader" class="loader">
+    <div class="skeleton"></div>
+    <div class="skeleton"></div>
+    <div class="skeleton"></div>
+  </div>
+
+  <!-- Content -->
+  <div id="content" class="hidden">
+
+    <div class="cards">
+      <div class="card">
+        <h3>Temperature</h3>
+        <div class="value"><span id="temp">--</span>°C</div>
+      </div>
+
+      <div class="card">
+        <h3>Humidity</h3>
+        <div class="value"><span id="humidity">--</span>%</div>
+      </div>
+
+      <div class="card">
+        <h3>Wind</h3>
+        <div class="value"><span id="wind">--</span> km/h</div>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <canvas id="tempChart"></canvas>
+    </div>
+
+    <h2>7 Day Forecast</h2>
+    <div class="forecast" id="forecast"></div>
+
+  </div>
+</div>
+
+<script src="weather.js"></script>
+</body>
+</html>
